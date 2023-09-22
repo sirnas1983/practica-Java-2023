@@ -1,7 +1,8 @@
 ## GUÍA TRABAJO PRÁCTICO Nº1 JAVA JEDI
 Les presento la guía de trabajos prácticos opcionales, todos estos los pueden realizar
 para obtener mayor práctica en el lenguaje.
-Ejercicios nivel : Iniciado JAVA JEDI
+
+## Ejercicios nivel : Iniciado JAVA JEDI
 1. Suma de dos números: Se le solicita que guarden dos números enteros y los
 sumen. El resultado mostrarlo por pantalla.
 2. Suma de dos números bis: Se les solicita que guarden dos números enteros y los
@@ -36,7 +37,8 @@ de quince multiplicaciones entre dos números enteros divididos por el número d
 multiplicación. Por ejemplo:
 Numero1*Numero2/1 + Numero1*Numero2/2 + … + Numero1*Numero2/15
 El resultado mostrarlo por pantalla.
-Ejercicios nivel : Padawan JAVA JEDI
+
+## Ejercicios nivel : Padawan JAVA JEDI
 1. Contador: Se le solicita que guarde un número en un espacio de memoria e
 incremente dicho número 20 veces sin usar asignación. ¿Que operador podría usar
 para hacerlo?
@@ -54,7 +56,8 @@ edades.
 otro espacio de memoria realice la conversión de esas libras a kilogramos. Utilice
 una constante de los valores que no van a cambiar en esta conversión. Muestre el
 resultado por pantalla
-Ejercicios nivel : Caballero JAVA JEDI
+
+## Ejercicios nivel : Caballero JAVA JEDI
 1. Obtener porcentaje : Dados dos números, uno real y el otro entero. Obtenga el
 porcentaje que indique el segundo número del primer número.
 2. Conversión de dólares a pesos: Escribir un programa en Java que solicite al
@@ -78,7 +81,8 @@ ingresa 5000 pesos, el programa deberá mostrar 250 euros.
 usuario una cantidad en bitcoins y muestre el equivalente en dólares, utilizando una
 tasa de cambio fija. Por ejemplo, si la tasa de cambio es de 1 bitcoin = 50000
 dólares, y el usuario ingresa 0.5 bitcoins, el programa deberá mostrar 25000 dólares.
-Ejercicios nivel : Maestro JAVA JEDI
+
+## Ejercicios nivel : Maestro JAVA JEDI
 1. Cálculo del área de un círculo: Escribir un programa en Java que calcule el área
 de un círculo con un radio de 5 unidades. Buscar la fórmula con la que se
 resuelve.
