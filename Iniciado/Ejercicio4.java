@@ -5,7 +5,7 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese un dividendo: ");
+        System.out.println("Ingrese el dividendo: ");
         Integer numero1 = scanner.nextInt();
         System.out.println("Ingrese el divisor: ");
         Integer numero2 = scanner.nextInt();

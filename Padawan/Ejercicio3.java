@@ -1,6 +1,5 @@
 package Padawan;
 
-import java.util.List;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
