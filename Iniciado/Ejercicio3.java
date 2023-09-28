@@ -3,12 +3,15 @@ import java.util.Scanner;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese su nombre:");
-        String name = scanner.nextLine();
-        char[] nameArray = name.toCharArray();
-        for (int i=0; i< name.length(); i++){
-            System.out.println(nameArray[i]);
-        }
+        char let1, let2, let3, let4;
+        let1 = 'D';
+        let2 = 'a';
+        let3 = 'r';
+        let4 = 'i';
+        System.out.println(""+let1+let2+let3+let4);
+
     }
 }
+
+// No se puede usar "" para asignar un valor a un char ya que las comillas dobles estan
+// reservadas para datos del tipo String. 

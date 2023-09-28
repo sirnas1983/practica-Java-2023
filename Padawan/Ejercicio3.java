@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-        
-        // char[] name = {'D', 'a', 'r', 'i', 'a', 'n'};
-        List<Character> name = List.of('D', 'a', 'r', 'i', 'a', 'n');
-        for (var letra : name){
-            System.out.println(letra);
-        }
+        char let1, let2, let3, let4;
+        let1 = 'D';
+        let2 = 'a';
+        let3 = 'r';
+        let4 = 'i';
+        System.out.println(""+let1+let2+let3+let4);    
     }
 }

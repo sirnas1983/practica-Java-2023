@@ -3,12 +3,9 @@ import java.util.Scanner;
 
 public class Ejercicio1 {
         public static void main(String[] args) {
-                    Scanner myObj = new Scanner(System.in); 
-                    System.out.println("Ingrese un entero: ");
-                    int integer1 = myObj.nextInt();
-                    System.out.println("Ingrese otro entero: ");
-                    int integer2 = myObj.nextInt();
-                    int sum = integer1 + integer2;
+                    int num1 = 5;
+                    int num2 = 7;
+                    var sum = num1 + num2;
                     String mensaje = String.format(
                         "El resultado de la suma es %d, es %s",
                         sum, 
