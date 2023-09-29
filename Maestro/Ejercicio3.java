@@ -7,7 +7,8 @@ public class Ejercicio3 {
         var a = 3;
         var b = 4;
         var h = Math.pow((Math.pow(a,2) + Math.pow(b,2)),0.5);
-        System.out.println("La hipotenusa del triangulo rectangulo de lado "+ a +" y lado "+ b + " es " + h);
+        System.out.println("La hipotenusa del triangulo rectangulo de lado " + 
+            a + " y lado " + b + " es " + h);
 
     }
     
