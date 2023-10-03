@@ -14,16 +14,16 @@ public class NumerosPrimos {
         Scanner scanner = new Scanner(System.in);
         // Solicito al usuario ingresar un maximo y un minimo para el calculo
         // e inicializo las variables max y min
-        System.out.println("Ingrese un minimo entre 1 y 999");
+        System.out.println("Ingrese un numero entre 1 y 999");
         min = scanner.nextInt();
-        System.out.println("Ingrese un maximo entre 1 y 1000");
+        System.out.println("Ingrese un numero entre 1 y 1000 mayor al anterior");
         max = scanner.nextInt();
         // Determino si max => min para no entrar en bucles infinitos y si ambos 
         // estan dentro de los limites establecidos (0 y 1000). De haber un error
         // el bucle while va a seguir solicitando que se ingresen los valores hasta
         // que esten dentro de los parametros establecidos
         while (max < 0 || max > 1000 || max < min){ 
-            System.out.println("Debe ingresar un maxero entre 1 y 1000 y maximo mayor a minimo");
+            System.out.println("Debe ingresar un numero entre 1 y 1000 y maximo mayor a minimo");
             System.out.println("Ingrese nuevamente un minimo:");
             min = scanner.nextInt();
             System.out.println("Ingrese nuevamente un maximo:");

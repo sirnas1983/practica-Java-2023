@@ -15,6 +15,6 @@ public class Ejercicio2 {
                 max = num;
             }
         }
-        System.out.println("El minimo es: "+ min + " y el maximo es: " + max);
+        System.out.println("El minimo es "+ min + " y el maximo es " + max);
     }
 }
