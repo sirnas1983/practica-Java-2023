@@ -3,7 +3,6 @@ package trabajoPracticoDos.Maestro;
 si es o no palíndromo. */
 public class Ejercicio6 {
     public static void main(String[] args) {
-        
 
         char[] palabra = {'c', 'a', 's', 'a', 'c'};
         boolean palindromo = true;
