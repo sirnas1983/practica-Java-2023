@@ -1,4 +1,7 @@
 package trabajoPracticoDos.Maestro;
+
+import java.util.Arrays;
+
 /*
 3. Unión de dos arreglos : Dado dos arreglos con cualquier tipo de valor (Ya sea
 String, Char, Integer, etc), realice la unión de ambos arreglos en un tercer arreglo.
@@ -17,5 +20,6 @@ public class Ejercicio3 {
                 arr3[i] = arr2[i - arr1.length];
             }
         }
+        System.out.println(Arrays.toString(arr3));
     }
 }
