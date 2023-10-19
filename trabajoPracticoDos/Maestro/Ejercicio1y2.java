@@ -12,9 +12,9 @@ public class Ejercicio1y2 {
         
         int[] arrNumerosEnteros = {1,2,3,4,5,6,7,8,6,6,69,10};
         int elemento = 6;
-        int cantidadApariciones = 0; // Variable para almacenar cuantas veces aparece el elemento a borrar
+        int cantidadApariciones = 0;
         int i;
-        // Con este primer for cuento la cantidad de eventos
+        // Con este primer 'for' cuento la cantidad de eventos
         for(i = 0; i < arrNumerosEnteros.length; i++){
             if (arrNumerosEnteros[i]== elemento){
                 cantidadApariciones ++;

@@ -46,8 +46,7 @@ public class NumerosPrimos {
             // numero mayor que la raiz cuadrada de un numero debe multiplicar si o si
             // a un numero menor que este, por ende ese valor ya lo tendriamos evaluado
             // con lo que no tendria sentido seguir recorriendo valores superiores a este.
-            // a x a = b x c
-            // si (b > a) -> (c < a) para mantener la igualdad
+            // Si -> (a x a) = (b x c) y (b > a) entonces necesariamente (c < a)
             for (j = 2; j <= Math.ceil(Math.pow(i, 0.5)); j++){
                 // Si es divisible por algun numero entre 2 y la raiz cuadrada 
                 // quiere decir que no es primo, con lo que salimos del segundo bucle for.
