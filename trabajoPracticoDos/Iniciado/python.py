@@ -1,9 +1,9 @@
-numero = 1
+def fibo(n):
+    if n <= 1:
+        return n
+    else:
+        return (fibo(n-2) + fibo(n-1))
 
-while numero <= 10:
-    numero += 1
 
-
-print(numero)
-
-print(19 == '19')
+for i in range(10):
+    print(fibo(i))
