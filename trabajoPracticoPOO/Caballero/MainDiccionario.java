@@ -15,7 +15,7 @@ public class MainDiccionario {
         
         String x = "";
         Scanner scanner = new Scanner(System.in);
-        Diccionario espaniol = new Diccionario("espaniol");
+        Diccionario espaniol = new Diccionario("Español");
 
         do{
             System.out.println("Ingrese una opcion: ");
@@ -53,7 +53,6 @@ public class MainDiccionario {
                     break;
                 default:
                     x = "exit";
-                    break;
             }
 
         } while( x != "exit");

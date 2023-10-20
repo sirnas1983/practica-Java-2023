@@ -6,8 +6,7 @@ public class Estudiante {
     String nombre;
     Long id;
     ArrayList<Calificacion> calificaciones;
-
-    static private ArrayList<Estudiante> estudiantes = new ArrayList<>(); //Array estatico para guardar lista de estudiantes
+    
     static private long autoIncrementalId = 0;
 
     public Estudiante(String nombre){
@@ -47,24 +46,5 @@ public class Estudiante {
         
     public void agregarCalificacion(Calificacion calificacion){
         this.calificaciones.add(calificacion);
-    }
-
-    //metodo que permite guardar en una variable de "clase" los estudiantes
-    static public void agregarEstudiante(Estudiante estudiante){
-        estudiantes.add(estudiante);
-    }
-
-    static public void eliminarEstudiante(Estudiante estudiante){
-        estudiantes.remove(estudiante);
-    }
-
-    static public void mostrarEstudiantes(){
-        estudiantes.forEach(est -> {
-            System.out.println("-".repeat(25));
-            System.out.println("ID " + est.id);
-            System.out.println("Nombre: " + est.nombre);
-            System.out.println("Promedio: " + est.promedioCalificaciones());
-        });
-        System.out.println("-".repeat(25));
     }
 }

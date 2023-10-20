@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class Calificacion {
 
-    float calificacion;
+    Double calificacion;
     LocalDate fechaCalificacion;
 
-    public Calificacion(float calificacion, String fecha){
+    public Calificacion(Double calificacion, String fecha){
         this.fechaCalificacion = LocalDate.parse(fecha);
         if(calificacion <= 10f && calificacion >= 0f){
             this.calificacion = calificacion;
