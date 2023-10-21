@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Libro {
     
     String titulo;
-    String genero;
     ArrayList<Autor> autores;
+    String genero;
     Boolean isDisponible;
     Scanner scan = new Scanner(System.in);
 
@@ -16,17 +16,19 @@ public class Libro {
         this.titulo = titulo;
         this.genero = genero;
         this.isDisponible = isDisponible;
-        this.agregarAutores();
+        this.autores = this.agregarAutores();
     }
 
-    public void agregarAutores(){
+    public ArrayList<Autor> agregarAutores(){
+        ArrayList<Autor> autores = new ArrayList<>();
         System.out.println("Debe ingresar al menos un autor");
         String x = "";
         do {
-            autores.add(Autor.asignarAutor());
+            autores.add(AutorRepository.asignarAutor());
             System.out.println("Desea agregar otro autor?");
             x = scan.nextLine();
         } while(x == "");
+        return autores;
     }
 
     public void alquilarLibro(){
