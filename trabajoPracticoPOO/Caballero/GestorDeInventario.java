@@ -25,7 +25,6 @@ public class GestorDeInventario {
     }
 
     public Producto buscarPorNombre(String nombre){
-
         for (Producto producto : this.inventario.keySet()){
             System.out.println(producto.nombre);
             if (producto.nombre.toLowerCase().equals(nombre.toLowerCase())){

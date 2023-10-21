@@ -49,8 +49,11 @@ public class MainInventario {
                     nombreProducto = scan.nextLine();
                     producto = gestorInventario.buscarPorNombre(nombreProducto);
                     if (producto != null){
-                        System.out.println("Ingrese el precio modificado: ");
-                        producto.precio = Float.parseFloat(scan.nextLine());
+                        System.out.println("Ingrese el nuevo precio (ENTER para dejar precio actual): ");
+                        String pr = scan.nextLine();
+                        if (!pr.equals("")){
+                        producto.precio = Float.parseFloat(pr);
+                        }
                         System.out.println("Ingrese el Stock: ");
                         producto.stock = Integer.parseInt(scan.nextLine());                   
                     }
