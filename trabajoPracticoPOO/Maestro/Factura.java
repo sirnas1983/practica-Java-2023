@@ -5,62 +5,61 @@ import java.util.HashMap;
 
 public class Factura {
     
-    static private Long idFacturaAutogenerado = 0l;
+    static private Long idAutogenerado = 0l;
     private Long idFactura;
     private Cliente cliente;
     private LocalDate fecha;
-    private HashMap<Producto, Integer> detalle;
+    private HashMap<Producto, Integer> detalleFactura;
 
-    public Factura(Cliente cliente, LocalDate fecha, HashMap<Producto, Integer> detalle) {
-        this.idFactura = getIdAutogenerado();
+    public Factura(Cliente cliente) {
         this.cliente = cliente;
-        this.fecha = fecha;
-        this.detalle = detalle;
-    }
-
-    public Factura() {
-    }
-
+        this.fecha = LocalDate.now();
+        this.detalleFactura = new HashMap<>();
     
-    static Long getIdAutogenerado(){
-        idFacturaAutogenerado ++;
-        return idFacturaAutogenerado;
     }
 
+    static Long getIdAutogenerado(){
+        idAutogenerado ++;
+        return idAutogenerado;
+    }
 
     public Cliente getCliente() {
         return cliente;
     }
 
-
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
 
     public LocalDate getFecha() {
         return fecha;
     }
 
-  
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
-
-
-    public HashMap<Producto, Integer> getDetalle() {
-        return detalle;
-    }
-
-    
-    public void setDetalle(HashMap<Producto, Integer> detalle) {
-        this.detalle = detalle;
-    }
-
 
     public Long getIdFactura() {
         return idFactura;
     }
 
+    public void agregarProducto(Producto prod, int cant){
+        this.detalleFactura.put(prod, cant);
+    }
 
+    public HashMap<Producto,Integer> getDetalleFactura() {
+        return this.detalleFactura;
+    }
+
+    public Double totalFactura(){
+        Double sum = 0.00;
+        for (Producto prod  : this.detalleFactura.keySet()){
+            sum += prod.getPrecio() * this.detalleFactura.get(prod);
+        };
+        return sum;
+    }
+
+    public void confirmarVenta(){
+        this.idFactura = getIdAutogenerado();
+    }
 }

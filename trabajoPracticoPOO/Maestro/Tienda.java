@@ -1,22 +1,18 @@
 package trabajoPracticoPOO.Maestro;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Tienda extends EntidadElectronica {
 
     private List<Cliente> clientes;
     private List<Factura> facturas;
-
-    public Tienda(){
-        super();
-    }
+    private Factura ventaEnCurso;
 
     public Tienda(String nombre, String domicilio, String telefono) {
         super(nombre, domicilio, telefono);
         this.clientes = new ArrayList<>();
+        this.facturas = new ArrayList<>();
     }
 
     public List<Cliente> getClientes() {
@@ -27,29 +23,58 @@ public class Tienda extends EntidadElectronica {
         this.clientes = clientes;
     }
 
-    public List<Producto> productosEnStock(){
-        List<Producto> resp = new ArrayList<>();
+    public List<String> productosEnStock(){
+        List<String> resp = new ArrayList<>();
         this.productos.forEach((elem) -> {
             if (elem.getStock() > 0){
-                resp.add(elem);
+                resp.add(elem.getNombre());
             }
         });
         return resp;
     }
 
-    public void venderProducto(Producto prod, int cant, Cliente cliente){
+    public void nuevaVenta(Cliente cliente){
+        this.ventaEnCurso = new Factura(cliente);
+    }
+
+    public void agregarProductoVenta(Producto prod, int cant){
         if(prod.getStock() < cant){
-            System.out.println("No se puede realizar la venta.");
+            System.out.println("No se puede agregar el producto " + prod.getNombre());
             System.out.println("Stock disponible: " + prod.getStock());
         } else {
             prod.setStock(prod.getStock() - cant);
-            cliente.registrarProducto(prod);
-            HashMap<Producto, Integer> detalle = new HashMap<>();
-            detalle.put(prod, cant);
-            Factura factura = new Factura(cliente, LocalDate.now(), detalle); 
-            this.facturas.add(factura);
-            System.out.println("Venta registrada correctamente.");
+            this.ventaEnCurso.agregarProducto(prod, cant + 
+                                            (this.ventaEnCurso.getDetalleFactura().get(prod) != null ? 
+                                            this.ventaEnCurso.getDetalleFactura().get(prod) : 0));
+            System.out.println("Producto agregado correctamente.");
         }
+    }
+
+    public void finalizarVenta(){
+        if (this.ventaEnCurso.getDetalleFactura().isEmpty()){
+            System.out.println("No hay productos agregados");
+            System.out.println("Antes de finalizar agregue productos");
+        } else {
+            this.ventaEnCurso.confirmarVenta();
+            this.facturas.add(this.ventaEnCurso);
+            System.out.println("FACTURA N° "+this.ventaEnCurso.getIdFactura() + " - Cliente: " + this.ventaEnCurso.getCliente().getNombre());
+            System.out.println("-".repeat(25));
+            System.out.println("Detalle:");
+            System.out.println("-".repeat(25));
+            this.ventaEnCurso.getDetalleFactura().forEach((prod, cant) ->{
+                this.ventaEnCurso.getCliente().registrarProducto(prod);
+                System.out.println(prod.getNombre() + " - cant.: " + cant);
+            });
+            System.out.println("-".repeat(25));
+            System.out.println("El monto total de venta es de " + this.ventaEnCurso.totalFactura());
+            System.out.println("-".repeat(25));
+            this.ventaEnCurso = null;
+        }
+    }
+
+    public void cancelarVenta(){
+        this.ventaEnCurso = null;
+        System.out.println("Venta cancelada exitosamente.");
     }
 }
 
