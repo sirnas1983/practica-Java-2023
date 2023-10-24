@@ -1,4 +1,4 @@
-package ejercicio2.entrada;
+package lunes_23_10_23.ejercicio_clase_2.ejercicio2.entrada;
 
 import java.util.Scanner;
 
@@ -7,12 +7,6 @@ public class InputConsoleService{
     public static Scanner scanner;
 
     private InputConsoleService() {}
-
-    public static void createScanner(){
-        if(scanner == null){
-            scanner = new Scanner(System.in);
-        }
-    }
 
     public static Scanner getScanner(){
         if (scanner == null) {
