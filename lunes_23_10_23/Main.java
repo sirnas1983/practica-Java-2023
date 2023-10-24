@@ -1,13 +1,13 @@
 package lunes_23_10_23;
 
 import lunes_23_10_23.ejercicio_clase_2.ejercicio2.basededatos.BdProductos;
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain.Client;
+import lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain.Cliente;
 import lunes_23_10_23.ejercicio_clase_2.ejercicio2.entrada.InputConsoleService;
 
 public class Main {
     public static void main(String[] args) {
         
-        Client client = new Client("Jorge", "De por alla", "jorge@jorge.com", "222-555555");
+        Cliente client = new Cliente("Jorge", "De por alla", "jorge@jorge.com", "222-555555");
         int opt = 0;
 
         do {
@@ -35,14 +35,14 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("-".repeat(35));
-                    client.getCart().cartToString();
+                    client.getCart().carritoToString();
                     System.out.println("-".repeat(35));
                     break;       
                 case 5:
                     client.emptyCart();
                     break;    
                 case 6:
-                    client.confirmCart();
+                    client.confirmCarrito();
                     break;                
                 case 7:
                     client.getOrdersToString();

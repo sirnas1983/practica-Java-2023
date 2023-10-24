@@ -1,6 +1,7 @@
 package lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain;
 
-public class Product {
+
+public class Producto {
     
     private Long id;
     private String nombre;
@@ -8,10 +9,10 @@ public class Product {
     private int stock;
     private String description;
 
-    public Product() {
+    public Producto() {
     }
 
-    public Product(Long id, String name, Double price, int stock, String descripcion) {
+    public Producto(Long id, String name, Double price, int stock, String descripcion) {
         this.id = id;
         this.nombre = name;
         this.precio = price;
@@ -60,6 +61,6 @@ public class Product {
     }
 
     public void buy(int qty){
-        this.setStock(this.getStock()-qty);
+        this.stock -= qty;
     }
 }

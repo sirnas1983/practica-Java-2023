@@ -6,23 +6,23 @@ import java.util.List;
 
 import lunes_23_10_23.ejercicio_clase_2.ejercicio2.basededatos.BdProductos;
 import lunes_23_10_23.ejercicio_clase_2.ejercicio2.entrada.InputConsoleService;
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.enums.OrderStatus;
+import lunes_23_10_23.ejercicio_clase_2.ejercicio2.enums.EstadoPedidos;
 
-public class Client {
+public class Cliente {
 
     private String name;
     private String adress;
     private String email;
     private String phone;
-    private Cart cart;
-    private List<Order> orders;
+    private Carrito cart;
+    private List<Pedido> orders;
 
-    public Client(String name, String adress, String email, String phone) {
+    public Cliente(String name, String adress, String email, String phone) {
         this.name = name;
         this.adress = adress;
         this.email = email;
         this.phone = phone;
-        this.cart = new Cart(this);
+        this.cart = new Carrito(this);
         this.orders = new ArrayList<>();
     }
 
@@ -58,34 +58,34 @@ public class Client {
         this.phone = phone;
     }
 
-    public Cart getCart() {
+    public Carrito getCart() {
         return this.cart;
     }
 
-    public void setCart(Cart cart) {
+    public void setCart(Carrito cart) {
         this.cart = cart;
     }
 
-    public List<Order> getOrders() {
+    public List<Pedido> getOrders() {
         return this.orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Pedido> orders) {
         this.orders = orders;
     }
 
-    public void confirmCart (){
+    public void confirmCarrito (){
         if (this.getCart().getOrder().isEmpty()){
             System.out.println("El carrito debe tener un producto al menos");
         } else {
-            Order order = new Order();
+            Pedido order = new Pedido();
             order.setCart(this.getCart());
             order.setClient(this);
             order.setDate(LocalDate.now());
-            order.setId(Order.autoGenerateID());
-            order.setStatus(OrderStatus.PENDIENTE);
+            order.setId(Pedido.autoGenerateID());
+            order.setStatus(EstadoPedidos.PENDIENTE);
             this.orders.add(order);
-            this.setCart(new Cart(this));
+            this.setCart(new Carrito(this));
             System.out.println("Gracias por su compra, puede consultar el estado de su pedido en 'Mis Pedidos'");
         }
     }
@@ -99,7 +99,7 @@ public class Client {
         InputConsoleService.getScanner();
         System.out.println("Ingrese ID de producto");
         Long id = InputConsoleService.getScanner().nextLong();
-        Product prod = BdProductos.getProductById(id);
+        Producto prod = BdProductos.getProductById(id);
         if (prod!=null){
             System.out.println("Ingrese la cantidad de " + prod.getNombre() + ":");
             int qty = InputConsoleService.getScanner().nextInt();
@@ -117,7 +117,7 @@ public class Client {
         InputConsoleService.getScanner();
         System.out.println("Ingrese ID de producto");
         Long id = InputConsoleService.getScanner().nextLong();
-        Product prod = BdProductos.getProductById(id);
+        Producto prod = BdProductos.getProductById(id);
         System.out.println("Ingrese la cantidad de " + prod.getNombre() + ":");
         int qty = InputConsoleService.getScanner().nextInt();
         if (this.cart.getOrder().containsKey(prod)){
@@ -141,12 +141,12 @@ public class Client {
             sel = String.format("%d", InputConsoleService.getScanner().nextInt());
         }
         if (sel.equals("0")){
-            for(Order order : orders){
+            for(Pedido order : orders){
                     order.orderToString();
             }  
         } else {
-            OrderStatus status = OrderStatus.values()[Integer.parseInt(sel)-1];
-            for(Order order : orders){
+            EstadoPedidos status = EstadoPedidos.values()[Integer.parseInt(sel)-1];
+            for(Pedido order : orders){
                 if(order.getStatus() == status){
                     order.orderToString();
                 }
