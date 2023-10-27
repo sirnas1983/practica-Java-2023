@@ -72,7 +72,7 @@ public class Carrito {
         } else {
             if (this.getOrder().get(prod) + qty < 0){
                 System.out.println("Solo se van a sacar " + this.getOrder().get(prod) + " unidades.");
-                qty = this.getOrder().get(prod);
+                qty = -this.getOrder().get(prod);
             }
             this.getOrder().put(prod, this.getOrder().get(prod) + qty);
             prod.buy(qty);
