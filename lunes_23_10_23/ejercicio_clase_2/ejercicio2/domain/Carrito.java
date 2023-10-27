@@ -1,4 +1,4 @@
-package lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain;
+package ejercicio2.domain;
 
 import java.util.HashMap;
 
@@ -44,13 +44,17 @@ public class Carrito {
     }
 
     public void addProduct(Producto prod, int qty){
-        if(prod.getStock() < qty){
-            System.out.println("Solo quedan " + prod.getStock() + " productos en stock");
-        } else if(this.getOrder().containsKey(prod)){
-            System.out.println("El producto ya esta en su carrito");
+        if(qty <= 0){
+            System.out.println("Debe ingresar una cantidad mayor que 0");
         } else {
-            this.getOrder().put(prod, qty);
-            prod.buy(qty);;
+            if(prod.getStock() < qty){
+                System.out.println("Solo quedan " + prod.getStock() + " productos en stock");
+            } else if(this.getOrder().containsKey(prod)){
+                this.modifyQty(prod, qty);
+            } else {
+                this.getOrder().put(prod, qty);
+                prod.buy(qty);;
+            }
         }
     }
 
@@ -66,6 +70,10 @@ public class Carrito {
         if(prod.getStock() < qty){
             System.out.println("Solo quedan " + prod.getStock() + " productos en stock");
         } else {
+            if (qty > this.getOrder().get(prod)){
+                System.out.println("Solo se van a sacar " + this.getOrder().get(prod) + " unidades.");
+                qty = this.getOrder().get(prod);
+            }
             this.getOrder().put(prod, this.getOrder().get(prod) + qty);
             prod.buy(qty);
         }
@@ -77,7 +85,15 @@ public class Carrito {
 
     public void carritoToString(){
         this.getOrder().forEach((key, value) ->{
-            System.out.println(key.getNombre() + " - cant: " + value);
+            System.out.println("Id: " + key.getId() + " - " + key.getNombre() + " - cant: " + value);
         });
+    }
+
+    public void verCarrito(){
+        System.out.println("-".repeat(35));
+        System.out.println("CARRITO: ");
+        System.out.println("-".repeat(35));
+        this.carritoToString();
+        System.out.println("-".repeat(35));
     }
 }

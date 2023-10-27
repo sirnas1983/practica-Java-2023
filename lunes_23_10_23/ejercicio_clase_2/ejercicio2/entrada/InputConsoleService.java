@@ -1,4 +1,4 @@
-package lunes_23_10_23.ejercicio_clase_2.ejercicio2.entrada;
+package ejercicio2.entrada;
 
 import java.util.Scanner;
 

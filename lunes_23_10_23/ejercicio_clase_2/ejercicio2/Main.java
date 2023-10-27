@@ -1,8 +1,8 @@
-package lunes_23_10_23;
+package ejercicio2;
 
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.basededatos.BdProductos;
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain.Cliente;
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.entrada.InputConsoleService;
+import ejercicio2.basededatos.BdProductos;
+import ejercicio2.domain.Cliente;
+import ejercicio2.entrada.InputConsoleService;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Main {
         do {
             System.out.println("1. Ver productos");
             System.out.println("2. Agregar producto al carrito");
-            System.out.println("3. Sacar producto del carrito");
+            System.out.println("3. Modificar producto del carrito");
             System.out.println("4. Ver carrito");
             System.out.println("5. Vaciar carrito");
             System.out.println("6. Comprar carrito");
@@ -31,12 +31,10 @@ public class Main {
                     client.addProduct();
                     break;
                 case 3:
-                    client.removeProduct();
+                    client.modifyProduct();
                     break;
                 case 4:
-                    System.out.println("-".repeat(35));
-                    client.getCart().carritoToString();
-                    System.out.println("-".repeat(35));
+                    client.getCart().verCarrito();
                     break;       
                 case 5:
                     client.emptyCart();

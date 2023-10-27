@@ -1,4 +1,4 @@
-package lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain;
+package ejercicio2.domain;
 
 
 public class Producto {

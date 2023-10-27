@@ -1,6 +1,6 @@
-package lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain;
+package ejercicio2.domain;
 
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.enums.EstadoPedidos;
+import ejercicio2.enums.EstadoPedidos;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 

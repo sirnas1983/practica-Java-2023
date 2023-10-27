@@ -1,12 +1,12 @@
-package lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain;
+package ejercicio2.domain;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.basededatos.BdProductos;
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.entrada.InputConsoleService;
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.enums.EstadoPedidos;
+import ejercicio2.basededatos.BdProductos;
+import ejercicio2.entrada.InputConsoleService;
+import ejercicio2.enums.EstadoPedidos;
 
 public class Cliente {
 
@@ -113,14 +113,14 @@ public class Cliente {
         }
     }
 
-    public void removeProduct(){
+    public void modifyProduct(){
         InputConsoleService.getScanner();
         System.out.println("Ingrese ID de producto");
         Long id = InputConsoleService.getScanner().nextLong();
         Producto prod = BdProductos.getProductById(id);
-        System.out.println("Ingrese la cantidad de " + prod.getNombre() + ":");
-        int qty = InputConsoleService.getScanner().nextInt();
         if (this.cart.getOrder().containsKey(prod)){
+            System.out.println("Ingrese la cantidad de " + prod.getNombre() + ":");
+            int qty = InputConsoleService.getScanner().nextInt();
             this.cart.modifyQty(prod, qty);
         } else {
             System.out.println("El producto no se encuentra en el carrito");

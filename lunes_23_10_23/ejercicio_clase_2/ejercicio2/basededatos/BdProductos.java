@@ -1,6 +1,5 @@
-package lunes_23_10_23.ejercicio_clase_2.ejercicio2.basededatos;
-
-import lunes_23_10_23.ejercicio_clase_2.ejercicio2.domain.Producto;
+package ejercicio2.basededatos;
+import  ejercicio2.domain.Producto;
 
 import java.util.List;
 
@@ -56,7 +55,7 @@ public class BdProductos {
         return null;
     }
 
-    public void addProduct(Producto product){
+    public static void addProduct(Producto product){
         products.add(product);
     }
 
