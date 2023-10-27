@@ -75,6 +75,7 @@ public class Cliente {
     }
 
     public void confirmCarrito (){
+        System.out.println("-".repeat(35));
         if (this.getCart().getOrder().isEmpty()){
             System.out.println("El carrito debe tener un producto al menos");
         } else {
@@ -88,11 +89,15 @@ public class Cliente {
             this.setCart(new Carrito(this));
             System.out.println("Gracias por su compra, puede consultar el estado de su pedido en 'Mis Pedidos'");
         }
+        System.out.println("-".repeat(35));
+
     }
 
     public void emptyCart(){
+        System.out.println("-".repeat(35));
         this.getCart().getOrder().clear();
         System.out.println("El carrito fue vaciado");
+        System.out.println("-".repeat(35));
     }
 
     public void addProduct(){

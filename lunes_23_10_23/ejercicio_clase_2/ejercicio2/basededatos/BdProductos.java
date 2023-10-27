@@ -60,6 +60,9 @@ public class BdProductos {
     }
 
     public static void listProducts(){
+        System.out.println("-".repeat(35));
+        System.out.println("LISTADO DE PRODUCTOS");
+        System.out.println("-".repeat(35));
         for (Producto product : products){
             System.out.println(
                 String.format("%d- %s - Precio un. : %.2f - Stock: %d", 
@@ -67,5 +70,6 @@ public class BdProductos {
                             )
             );
         }
+        System.out.println("-".repeat(35));
     }
 }
