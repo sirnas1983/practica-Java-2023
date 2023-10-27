@@ -154,7 +154,7 @@ public class Cliente {
         }
     }
 
-    public void verCarrito(){
+    public void viewCart(){
         this.cart.verCarrito();
     }
 }

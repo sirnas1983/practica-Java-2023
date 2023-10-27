@@ -34,7 +34,7 @@ public class Main {
                     client.modifyProduct();
                     break;
                 case 4:
-                    client.getCart().verCarrito();
+                    client.viewCart();
                     break;       
                 case 5:
                     client.emptyCart();
