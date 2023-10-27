@@ -76,7 +76,7 @@ public class Cliente {
 
     public void confirmCarrito (){
         System.out.println("-".repeat(35));
-        if (this.getCart().getOrder().isEmpty()){
+        if (this.getCart().getProducts().isEmpty()){
             System.out.println("El carrito debe tener un producto al menos");
         } else {
             Pedido order = new Pedido();
@@ -95,7 +95,7 @@ public class Cliente {
 
     public void emptyCart(){
         System.out.println("-".repeat(35));
-        this.getCart().getOrder().clear();
+        this.getCart().getProducts().clear();
         System.out.println("El carrito fue vaciado");
         System.out.println("-".repeat(35));
     }
@@ -109,7 +109,7 @@ public class Cliente {
         if (prod!=null){
             System.out.println("Ingrese la cantidad de " + prod.getNombre() + ":");
             int qty = InputConsoleService.getScanner().nextInt();
-            if (this.cart.getOrder().containsKey(prod)){
+            if (this.cart.getProducts().containsKey(prod)){
                 this.cart.modifyQty(prod, qty);
             } else {
                 this.cart.addProduct(prod, qty);
@@ -127,7 +127,7 @@ public class Cliente {
         System.out.println("Ingrese ID de producto");
         Long id = InputConsoleService.getScanner().nextLong();
         Producto prod = BdProductos.getProductById(id);
-        if (this.cart.getOrder().containsKey(prod)){
+        if (this.cart.getProducts().containsKey(prod)){
             System.out.println("Ingrese la cantidad de " + prod.getNombre() + ":");
             int qty = InputConsoleService.getScanner().nextInt();
             this.cart.modifyQty(prod, qty);
