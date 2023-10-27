@@ -96,6 +96,7 @@ public class Cliente {
     }
 
     public void addProduct(){
+        System.out.println("-".repeat(35));
         InputConsoleService.getScanner();
         System.out.println("Ingrese ID de producto");
         Long id = InputConsoleService.getScanner().nextLong();
@@ -111,9 +112,12 @@ public class Cliente {
         } else {
             System.out.println("Producto inexistente, intente nuevamente");
         }
+        System.out.println("-".repeat(35));
+
     }
 
     public void modifyProduct(){
+        System.out.println("-".repeat(35));
         InputConsoleService.getScanner();
         System.out.println("Ingrese ID de producto");
         Long id = InputConsoleService.getScanner().nextLong();
@@ -125,6 +129,7 @@ public class Cliente {
         } else {
             System.out.println("El producto no se encuentra en el carrito");
         }
+        System.out.println("-".repeat(35));
     }
 
     public void getOrdersToString(){

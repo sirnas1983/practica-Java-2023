@@ -70,12 +70,15 @@ public class Carrito {
         if(prod.getStock() < qty){
             System.out.println("Solo quedan " + prod.getStock() + " productos en stock");
         } else {
-            if (qty > this.getOrder().get(prod)){
+            if (qty < 0 && this.getOrder().get(prod) + qty < 0){
                 System.out.println("Solo se van a sacar " + this.getOrder().get(prod) + " unidades.");
                 qty = this.getOrder().get(prod);
             }
             this.getOrder().put(prod, this.getOrder().get(prod) + qty);
             prod.buy(qty);
+            if (this.getOrder().get(prod) == 0l) {
+                this.getOrder().remove(prod);
+            }
         }
     }
 
