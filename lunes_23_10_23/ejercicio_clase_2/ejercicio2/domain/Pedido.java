@@ -82,13 +82,6 @@ public class Pedido {
         this.setStatus(EstadoPedidos.ENTREGADO);
     }
 
-    public Double purchaseAmount(){
-        Double amount = 0d;
-        for (Producto prod : this.cart.getOrder().keySet()){
-            amount += (prod.getPrecio() * this.cart.getOrder().get(prod));
-        };
-        return amount;
-    }
 
     public void orderToString(){
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -98,7 +91,7 @@ public class Pedido {
         System.out.println("-".repeat(35));
         this.getCart().carritoToString();
         System.out.println("-".repeat(35));
-        System.out.println("Total de compra: " + String.format("%.2f", this.purchaseAmount()) + "\nEstado: " + this.getStatus());
+        System.out.println("Total de compra: " + String.format("%.2f", this.getCart().purchaseAmount()) + "\nEstado: " + this.getStatus());
         System.out.println("-".repeat(35));
     }
 }

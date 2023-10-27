@@ -153,4 +153,8 @@ public class Cliente {
             }
         }
     }
+
+    public void verCarrito(){
+        this.cart.verCarrito();
+    }
 }

@@ -95,5 +95,15 @@ public class Carrito {
         System.out.println("-".repeat(35));
         this.carritoToString();
         System.out.println("-".repeat(35));
+        System.out.println("Monto total: " + this.purchaseAmount());
+        System.out.println("-".repeat(35));
+    }
+
+    public Double purchaseAmount(){
+        Double amount = 0d;
+        for (Producto prod : this.order.keySet()){
+            amount += (prod.getPrecio() * this.order.get(prod));
+        };
+        return amount;
     }
 }
